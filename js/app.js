@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	
+
 	console.log("Le chiffre est compris entre 0 et 9 !");
 
 	var nbMyst = (Math.floor((9)*Math.random()+1));
@@ -14,12 +14,11 @@ $(document).ready(function(){
 
 			var essai =  $("#chiffre").val();
 			console.log(essai); 
-
 			if (essai < nbMyst){
-				$("#try").append("<p>C'est Plus !</p>");
+				$("#try").append("<p class='plus' class='cligno3'>C'est Plus !</p>");
 				console.log("+");
 			} if (essai > nbMyst) {
-				$("#try").append("<p>C'est Moins !</p>");
+				$("#try").append("<p class='moins' class='cligno3'>C'est Moins !</p>");
 				console.log("-");
 			}
 
@@ -28,7 +27,7 @@ $(document).ready(function(){
 
 			}
 			if (essai == nbMyst) {
-				$("#try").append("<p>Bravo tu as trouver, essaie encore !</p>");
+				$("#try").append("<p class='ajout' class='cligno1'>Bravo tu as trouver, essaie encore !</p>");
 				nbMyst = (Math.floor((9)*Math.random()+1));
 				i = 1
 				console.log("ok");
@@ -40,23 +39,19 @@ $(document).ready(function(){
 	})
 
 
+	
+	var inter = setInterval(function(){
+		$('#titre').toggleClass('cligno1');
+		$('#titre').toggleClass('cligno2');
+		$('.plus').toggleClass('cligno3');
+		$('.plus').toggleClass('cligno2');
+		$('.moins').toggleClass('cligno3');
+		$('.moins').toggleClass('cligno2');
+		$('.ajout').toggleClass('cligno1');
+		$('.ajout').toggleClass('cligno2');
+		// $('#titre').css('backgroud-colors', randcol(colors));
+	}, 100);
+
 
 });
 
-var colors = ["DF06FF", "50FFFA", "FFFC00", "FFD300", "2116FF"];
-function randcol (arg) {
-	if(!prevrand){
-		var prevrand = arg.length+1
-	}
-	var  rand = arg[Math.floor((Math.random()*arg.length))];
-	while (rand === prevrand) {
-		var rand = arg[Math.floor((Math.random()*arg.length))];
-	}
-	prevrand = rand;
-	return rand;
-};
-var inter = setInterval(function(){
-
-$('#titre').css('colors', randcol(colors));//text
-$('#titre').css('backgroud-colors', randcol(colors));//text
-});

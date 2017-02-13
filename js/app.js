@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 			}
 			if (essai == nbMyst) {
-				$("#try").append("<p class='ajout' class='cligno1'>Bravo tu as trouver, essaie encore !</p>");
+				$("#try").append("<p class='ajout' class='cligno1'>Bravo tu as trouver , essaie encore !</p>");
 				nbMyst = (Math.floor((9)*Math.random()+1));
 				i = 1
 				console.log("ok");

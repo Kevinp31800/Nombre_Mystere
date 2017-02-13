@@ -21,7 +21,7 @@ h1{
 
 .ajout{
 
-	font-size: 25px;
+	font-size: 30px;
 	font-family: 'Gloria Hallelujah', cursive;
 
 }
@@ -38,4 +38,18 @@ h1{
 
 .cligno3{
 	color: red;
+}
+
+p{
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.plus{
+
+	font-size: 20px;
+}
+.moins{
+	font-size: 20px;
 }

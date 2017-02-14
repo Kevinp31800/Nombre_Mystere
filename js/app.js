@@ -22,11 +22,13 @@ $(document).ready(function(){
 				console.log("-");
 			}
 
-			if (essai === 3){
-				$('#try').append('<p>Perdu le chiffre etait</p>'+nbMyst)
+			if (i === 3){
+				$('#try').append("<p class='perdu' class='cligno3' >Perdu le chiffre etait "+nbMyst+"</p>")
+				nbMyst = (Math.floor((9)*Math.random()+1));
+
 
 			}
-			if (essai == nbMyst) {
+			else if (essai == nbMyst) {
 				$("#try").append("<p class='ajout' class='cligno1'>Bravo tu as trouver , essaie encore !</p>");
 				nbMyst = (Math.floor((9)*Math.random()+1));
 				i = 1
@@ -47,6 +49,8 @@ $(document).ready(function(){
 		$('.plus').toggleClass('cligno2');
 		$('.moins').toggleClass('cligno3');
 		$('.moins').toggleClass('cligno2');
+		$('.perdu').toggleClass('cligno3');
+		$('.perdu').toggleClass('cligno2');
 		$('.ajout').toggleClass('cligno1');
 		$('.ajout').toggleClass('cligno2');
 		// $('#titre').css('backgroud-colors', randcol(colors));
